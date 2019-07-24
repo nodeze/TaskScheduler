@@ -25,7 +25,7 @@ function getTasks(username, res) {
     if (error) throw new Error(error);
     //console.log(body);
     //console.log(response);
-    res.render("/tasks/tasks", { model: JSON.parse(body) });
+    res.render("/tasks/index", { model: JSON.parse(body) });
   });
 }
 
