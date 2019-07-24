@@ -23,9 +23,9 @@ function getTasks(username, res) {
   };
   request(options, function(error, response, body) {
     if (error) throw new Error(error);
-    console.log(body);
-    console.log(response);
-    res.render("index", { model: JSON.parse(body) });
+    //console.log(body);
+    //console.log(response);
+    res.render("/tasks/tasks", { model: JSON.parse(body) });
   });
 }
 
