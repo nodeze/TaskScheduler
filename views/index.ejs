@@ -6,18 +6,25 @@
     <% include ../partials/head %>
 </head>
 <body class="container">
-
 <header>
     <% include ../partials/header %>
 </header>
-
 <main>
-    <div class="jumbotron">
-        <h1>This is great</h1>
-        <p>Welcome to templating using EJS</p>
+    <h4>Tasks</h4>
+
+    <div class="list-group">
+        <% model.forEach(function(task){ %>
+            <a href="#" class="list-group-item list-group-item-action active">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"><%=task.title %></h5>
+                <small><%=task.status%></small>
+              </div>
+              <p class="mb-1">Priority:<%=title.priority%></p>
+              <small>Ref:<%=task.internalid%></small>
+            </a>
+        <% }); %>
     </div>
 </main>
-
 <footer>
     <% include ../partials/footer %>
 </footer>
