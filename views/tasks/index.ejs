@@ -2,30 +2,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <% include ../partials/head %>
+    <% include ../../partials/head %>
 </head>
-<body class="container">
+
+<body>
+
 <header>
-    <% include ../partials/header %>
+    <% include ../../partials/header %>
 </header>
-<main>
+<br>
+<main  class="container">
+
     <h4>Tasks</h4>
 
-    <div class="list-group">
-        <% model.forEach(function(task){ %>
-            <a href="#" class="list-group-item list-group-item-action active">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><%=task.title %></h5>
-                <small><%=task.status%></small>
-              </div>
-              <p class="mb-1">Priority:<%=title.priority%></p>
-              <small>Ref:<%=task.internalid%></small>
-            </a>
+
+        <% model.result.forEach(function(task){ %>
+        <div class="card">
+  <div class="card-body">
+    <%- include('task-tpl', {task: task}); %>
+        
+  </div>
+</div>
+            
         <% }); %>
-    </div>
 </main>
 <footer>
-    <% include ../partials/footer %>
+    <% include ../../partials/footer %>
 </footer>
 
 </body>

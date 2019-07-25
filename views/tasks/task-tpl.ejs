@@ -1,0 +1,51 @@
+
+
+  <div class="row">
+    <div class="col-9">
+      <h5>TASK: <%=task.title%></h4>
+      <div class="row">
+        <div class="col">
+         <table class="table table-sm table-borderless">
+          <tr>
+            <td>Due:<span><%=task.duedate%></span></td>
+            <td>Created:<span><%=task.createddate%></span></td>
+          </tr>
+          <tr>
+            <td>Priority:<span><%=task.priority.text%></span></td>
+            <td>AssignedBy:<span><%=task.owner.text%></span></td>
+          </tr>
+        </table>
+        </div>
+       
+      </div>
+      <div class="row">
+        <div class="col">
+        <a href="#">Attachment1</a>
+        <a href="#">Attachment2</a>
+
+        </div>
+        
+
+      </div>
+    </div>
+    <div class="col">
+      <button class="btn btn-sm btn-outline-warning">PAUSE</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-sm btn-outline-success">COMPLETE</button>
+      <div class="status-text">
+        N/A
+        <div>
+          <p class="task-status">
+            <span class="badge badge-success"><%=task.status.text%></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%=task.message%>
+    </div>
+  </div>
+
